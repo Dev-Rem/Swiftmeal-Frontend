@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  swiftmealfrontend:
+    image: swift-meal:frontend
+    container_name: swiftmeal-frontend
+    build: .
+    volumes:
+      - '.:/usr/src/swiftmeal-frontend'
+      - '/usr/src/swiftmeal-frontend/node_modules'
+    ports:
+      - 3001:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
