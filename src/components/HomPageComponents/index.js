@@ -1,3 +1,4 @@
-import NavBar from "./NavBar";
+import NavBar from "../LayoutComponents/NavBar";
+import HomePageBanners from "./HomePageSearch";
 
-export { NavBar };
+export { NavBar, HomePageBanners };

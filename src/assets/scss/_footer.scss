@@ -1,0 +1,32 @@
+@import 'variables';
+.footer{
+    background-color: $footer-bg-clr;
+    width: $banner-width;
+    height: 100%;
+    color: #F4F4F4;
+
+    span{
+        color: black;
+        font-weight: 500;
+    }
+
+    a{
+        color:#F4F4F4;
+        text-decoration: none;
+    }
+
+    ul{
+        margin-top: 10px;
+        margin-left: 15px;
+    }
+
+    li{
+        padding-bottom: 5px;
+        font-weight: 100;
+        font-size: 15px;
+    }
+    p{
+        color: black;
+        font-weight: 100;
+    }
+}
