@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Logo from "./Logo";
@@ -9,7 +10,7 @@ const Footer = () => {
         <Row>
           <Logo />
         </Row>
-        <Row sm="2" xs={2} wrap="true">
+        <Row>
           <Col>
             <span>Swift Meal Links</span>
             <Row>
@@ -77,7 +78,7 @@ const Footer = () => {
         <br></br>
         <Row>
           <Col sm={3}>
-            <p> &copy; Swift Meal</p>
+            <p> &copy; Swift Meal </p>
           </Col>
           <Col sm={9}>
             <a href="#">

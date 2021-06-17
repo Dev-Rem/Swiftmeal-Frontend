@@ -1,6 +1,6 @@
 import React from "react";
-const HomePageBanners = () => {
-  return <div className="banner">This is the first banner</div>;
+const HomePageSearch = () => {
+  return <div className="search-banner">This is the first banner</div>;
 };
 
-export default HomePageBanners;
+export default HomePageSearch;

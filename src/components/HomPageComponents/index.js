@@ -1,4 +1,6 @@
-import NavBar from "../LayoutComponents/NavBar";
-import HomePageBanners from "./HomePageSearch";
+import HomePageSearch from "./HomePageSearch";
+import Categories from "./Categories";
+import Cities from "./Cities";
+import Motivation from "./Motivation";
 
-export { NavBar, HomePageBanners };
+export { Categories, HomePageSearch, Cities, Motivation };
