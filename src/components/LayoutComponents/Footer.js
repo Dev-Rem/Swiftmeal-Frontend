@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Logo from "./Logo";
 
 const Footer = () => {
+  const currentYear = useState(new Date().getFullYear());
+
   return (
     <footer className="footer">
       <Container>
@@ -78,7 +80,7 @@ const Footer = () => {
         <br></br>
         <Row>
           <Col sm={3}>
-            <p> &copy; Swift Meal </p>
+            <p> &copy; Swift Meal {currentYear} </p>
           </Col>
           <Col sm={9}>
             <a href="#">

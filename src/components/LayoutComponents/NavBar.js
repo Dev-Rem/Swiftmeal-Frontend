@@ -9,12 +9,12 @@ const NavBar = () => {
       <div className="navbar-options">
         <ul>
           <li>
-            <button className="login-button" href="#">
+            <button className="login" href="#">
               Log in
             </button>
           </li>
           <li>
-            <button className="button" href="#">
+            <button className="button-small" href="#">
               Sign up
             </button>
           </li>
