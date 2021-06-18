@@ -1,27 +1,26 @@
 @import "navbar";
 @import 'footer';
 @import "variables";
+@import "homePage";
+@import "base";
 
-@font-face {
-    font-family: satisfy;
-    src: local('Satisfy'), url("../fonts/Satisfy/Satisfy-Regular.ttf") format('truetype');
-}
-
-body{
-    margin: 0;
-}
-
-.button{
-    width: 70px;
-    height: 30px;
-    background-color: $button-bg-clr;
+.button-small{
     border-radius: 5px;
     border: 0;
     color: white;
     cursor: pointer;
+    width: $button-small-width;
+    height: $button-small-height;
+    background-color: $button-bg-clr;
 }
-.button :hover{
-    background-color: $button-bg-clr-hover;
+.button-medium{
+    border-radius: 5px;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    width: $button-medium-width;
+    height: $button-medium-height;
+    background-color: $button-bg-clr;
 }
 
 .banner{

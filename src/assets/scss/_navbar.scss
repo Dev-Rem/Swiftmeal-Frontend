@@ -10,14 +10,15 @@
     flex-direction: row;
     justify-content: space-between;
 }
-.login-button {
+.login {
     width: $button-small-width;
     height: $button-small-height;
-    background-color: inherit;
+    background-color: white;
     border-radius: 5px;
-    border: 0;
+    border: 1px solid $border-color;
     color: $button-bg-clr;
     cursor: pointer;
+
 }
 .logo {
     font-family: "satisfy";
