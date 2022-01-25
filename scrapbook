@@ -1,4 +1,45 @@
 1. Fix logo image import @NavBar.js DONE
 2. structure scss files properly DONE
-3. Design banner section. 
+3. Design banner section. DONE
 4. Remove app name from footer logo. DONE
+5. Design Categories section. 
+
+
+
+ <div className="search-banner">
+          <div className="search-bar">
+            <input className="search-input" placeholder="Search" />
+            <img src={SearchIcon} alt="search-icon" />
+          </div>
+        </div>
+
+<Container className="container" fluid>
+        <Row>
+          <Col>
+            <div className="card-image">
+              <img src={restaurantImage} alt="Restaurant" />
+            </div>
+            <div className="card-text">
+              <h1>restaurants</h1>
+            </div>
+          </Col>
+          <Col>
+            <div className="card-text">
+              {" "}
+              <h1> Foods</h1>
+            </div>
+            <div className="card-image">
+              <img src={foodImage} alt="Foods" />
+            </div>
+          </Col>
+          <Col>
+            <div className="card-image">
+              <img src={drinkImage} alt="drinks" />
+            </div>
+            <div className="card-text">
+              {" "}
+              <h1> Drinks</h1>
+            </div>
+          </Col>
+        </Row>
+      </Container>

@@ -1,5 +1,12 @@
 @import 'variables';
 .footer{
+
+    .logo{
+        img{
+            width: 100px;
+            height: 100px;
+        }
+    }
     background-color: $footer-bg-clr;
     width: $banner-width;
     height: 100%;

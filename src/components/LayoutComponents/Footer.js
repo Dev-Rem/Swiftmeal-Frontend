@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Logo from "./Logo";
+import logo from "../../assets/images/logo.png";
 
 const Footer = () => {
   const currentYear = useState(new Date().getFullYear());
@@ -10,7 +10,9 @@ const Footer = () => {
     <footer className="footer">
       <Container>
         <Row>
-          <Logo />
+          <div className="logo">
+            <img src={logo} alt="logo" />
+          </div>
         </Row>
         <Row>
           <Col>

@@ -1,11 +1,6 @@
 import React, { Fragment, useEffect } from "react";
 import { NavBar, Footer } from "../components/LayoutComponents/index";
-import {
-  Categories,
-  Cities,
-  Motivation,
-  HomePageSearch,
-} from "../components/HomPageComponents/index";
+import { HomePageSearch } from "../components/HomPageComponents/index";
 
 function HomePage() {
   useEffect(() => {
@@ -20,9 +15,6 @@ function HomePage() {
     <Fragment>
       <NavBar />
       <HomePageSearch />
-      <Categories />
-      <Cities />
-      <Motivation />
       <Footer />
     </Fragment>
   );
