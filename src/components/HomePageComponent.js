@@ -1,75 +1,28 @@
-1. Fix logo image import @NavBar.js DONE
-2. structure scss files properly DONE
-3. Design banner section. DONE
-4. Remove app name from footer logo. DONE
-5. Design Categories section. 
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React from "react";
+import { Container, Row, Col, Button, Carousel, Image } from "react-bootstrap";
+import restaurantImage from "../assets/images/restaurantCard.png";
+import food2 from "../assets/images/food2.png";
+import drinks2 from "../assets/images/drinks2.jpeg";
+import panel1 from "../assets/images/panel1.png";
+import panel2 from "../assets/images/panel2.gif";
 
-
-
- <div className="search-banner">
-          <div className="search-bar">
-            <input className="search-input" placeholder="Search" />
-            <img src={SearchIcon} alt="search-icon" />
-          </div>
-        </div>
-
-<Container className="container" fluid>
-        <Row>
-          <Col>
-            <div className="card-image">
-              <img src={restaurantImage} alt="Restaurant" />
-            </div>
-            <div className="card-text">
-              <h1>restaurants</h1>
-            </div>
-          </Col>
-          <Col>
-            <div className="card-text">
-              {" "}
-              <h1> Foods</h1>
-            </div>
-            <div className="card-image">
-              <img src={foodImage} alt="Foods" />
-            </div>
-          </Col>
-          <Col>
-            <div className="card-image">
-              <img src={drinkImage} alt="drinks" />
-            </div>
-            <div className="card-text">
-              {" "}
-              <h1> Drinks</h1>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-
-
-      .card-image {
-                    width: 300px;
-                    height: 200px;
-                }      
-                .card-text{
-                    width: auto;
-                    height: auto;
-                    padding: 60px 0px;
-                    background-color: #F4F4F4;
-                    h1{
-                        width: 100%;
-                        height: auto;
-                        text-align: center;
-                    }
-                }
-
-
-                <div>
-      <Container fluid>
+const HomePageComponent = () => {
+  return (
+    <div>
+      <Container fluid className="main-container">
         <Col>
           <Row>
             <div className="search-banner">
               <div className="search-bar">
-                <input className="search-input" placeholder="Search" />
-                <Button></Button>
+                <ul>
+                  <li>
+                    <input className="search-input" placeholder="Search" />
+                  </li>
+                  <li>
+                    <Button type="submit"></Button>
+                  </li>
+                </ul>
               </div>
             </div>
           </Row>
@@ -114,24 +67,30 @@
           <Row>
             <div className="cities">
               <div className="title">
-                <h2>Look for the Best Meals and restaurants close to you</h2>
+                <h2>Look For The Best Meals And Restaurants Close To You</h2>
               </div>
               <Container fluid className="container">
                 <Row>
                   <Col className="col" sm={7}>
                     <div className="city-search">
-                      <input
-                        className="search-input"
-                        placeholder="Name of your city"
-                      />
-                      <button type="button">Seach</button>
+                      <ul>
+                        <li>
+                          <input
+                            className="search-input"
+                            placeholder="Name of your city"
+                          />
+                        </li>
+                        <li>
+                          <button type="submit">Search</button>
+                        </li>
+                      </ul>
                     </div>
                     <div className="suggested-city">
                       <p>Based on your Location we believe you are in Abuja</p>
                     </div>
                   </Col>
                   <Col>
-                    <div className="cities">
+                    <div className="list-cities">
                       <ul>
                         <li>
                           <a href="#">Abuja</a>
@@ -178,14 +137,58 @@
               </Container>
             </div>
           </Row>
-          <Row> Motivational section</Row>
+          <Row>
+            <div className="motivation">
+              <Carousel fade="true" variant="dark" className="carousel">
+                <Carousel.Item className="carousel-item">
+                  <img
+                    className="d-block w-100"
+                    src={panel1}
+                    alt="First slide"
+                  />
+                  <Carousel.Caption>
+                    <h3>First slide label</h3>
+                    <p>
+                      Nulla vitae elit libero, a pharetra augue mollis interdum.
+                    </p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src={panel2}
+                    alt="Second slide"
+                  />
+
+                  <Carousel.Caption>
+                    <h3>Second slide label</h3>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src={panel1}
+                    alt="Third slide"
+                  />
+
+                  <Carousel.Caption>
+                    <h3>Third slide label</h3>
+                    <p>
+                      Praesent commodo cursus magna, vel scelerisque nisl
+                      consectetur.
+                    </p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              </Carousel>
+            </div>
+          </Row>
         </Col>
       </Container>
     </div>
+  );
+};
 
-
-    login and register video: https://www.youtube.com/watch?v=juUaJpMd2LE
-    Github Profile: https://github.com/ipenywis
-    Official Website: http://ipenywis.com
-    Official Facebook: http://go.ipenywis.com/ipeny4907
-    Official Twitter: http://go.ipenywis.com/islem9a03
+export default HomePageComponent;

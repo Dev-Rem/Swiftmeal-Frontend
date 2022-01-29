@@ -5,4 +5,3 @@ import App from "./pages/App";
 const reactContentRoot = document.getElementById("root");
 
 ReactDOM.render(<App />, reactContentRoot);
-

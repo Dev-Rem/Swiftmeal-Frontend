@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect } from "react";
-import { NavBar, Footer } from "../components/LayoutComponents/index";
-import { HomePageSearch } from "../components/HomPageComponents/index";
+import { NavBar, Footer, HomePageComponent } from "../components/index";
 
 function HomePage() {
   useEffect(() => {
@@ -14,7 +13,7 @@ function HomePage() {
   return (
     <Fragment>
       <NavBar />
-      <HomePageSearch />
+      <HomePageComponent />
       <Footer />
     </Fragment>
   );

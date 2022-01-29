@@ -1,5 +1,8 @@
 @import "variables";
 
+.main-container{
+    padding: 0px;
+}
 
 .search-banner{
     width: $banner-width;
@@ -12,32 +15,42 @@
 
     .search-bar{
         height: 50px;
-        width: 400px;
+        width: 500px;
+        ul{
+            padding: 0px;
+            margin: 0px;
+            width: 450px;
+            li{
+                height: 50px;
+                width: 100%;
+                display: inline;
 
-        .search-input{
-            width: 100%;
-            height: 100%;
-            margin-right: 10px;
-            border-radius: 5px 0px 0px 5px;
-            margin-top: 250px;
-            padding-left: 20px;
-            font-size: 20px;
-            outline: none;
-            border: 0;
-            -webkit-box-shadow: 4px 4px 37px -5px rgba(0,0,0,0.68); 
-            box-shadow: 4px 4px 37px -5px rgba(0,0,0,0.68);
+                .search-input{
+                    width: 350px;
+                    height: 50px;
+                    border-radius: 5px 0px 0px 5px;
+                    margin-top: 250px;
+                    padding-left: 20px;
+                    font-size: 20px;
+                    outline: none;
+                    border: 0;
+                    box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.2);
+                }
+                .btn{
+                    background-image: url("../../assets/images/searchIcon.png");
+                    height: 50px;
+                    width: 50px;
+                    background-repeat: no-repeat;
+                    background-color: white;
+                    background-position: center;
+                    background-size: contain;
+                    border-radius: 0px 5px 5px 0px;
+                    border: 0px;
+                    margin: 0%;
+                }
+            }
         }
-        .btn{
-            background-image: url("../../assets/images/searchIcon.png");
-            height: 45px;
-            width: 45px;
-            background-repeat: no-repeat;
-            background-color: white;
-            background-position: center;
-            background-size: contain;
-            border-radius: 0px 5px 5px 0px;
-            border: 0px;
-        }
+        
     }
 }
 
@@ -45,12 +58,11 @@
 .categories-banner{
     border-top: 1px solid $border-color;
     width: $banner-width;
-    height: $banner-height;
+    height: 100%;
     padding: 100px 25px;
 
     .container{
         height: 100%;
-        flex-wrap: nowrap;
         
         .row{
             height: 100%;
@@ -59,27 +71,29 @@
                 height: auto;
                 padding: 0 !important;
                 margin: 0 10px;
-                -webkit-box-shadow: 4px 4px 37px -5px rgba(0,0,0,0.68); 
-                box-shadow: 4px 4px 25px -5px rgba(0,0,0,0.68);
+                box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.2);
                 .card-image {
                     width: auto;
                     height: auto;
                     
                     img{
+                        
                         width: 100%;
                         height: 100%;
-                        object-fit: cover;
+                        object-fit: fill;
                     }
                 }      
                 .card-text{
+                    
                     width: auto;
                     height: auto;
                     padding: 60px 0px;
                     background-color: #F4F4F4;
                     h1{
                         width: 100%;
-                        height: auto;
+                        height: 100%;
                         text-align: center;
+                        font-family: "satisfy";
                     }
                 }
             }
@@ -91,14 +105,17 @@
 .cities{
     border-top: 1px solid $border-color;
     width: $banner-width;
-    height: $banner-height;
+    height: 100%;
     background-color: #F4F4F4;
     padding: 50px 25px;
+    
 
     .title{
         width: 100%;
         text-align: center;
         padding: 10px;
+        font-family: 'satisfy';
+        color: rgb(184, 17, 184);
     }
     .container{
         height: 100%;
@@ -107,56 +124,76 @@
             width: auto;
             height: auto;
             background-color: white;
-            padding: 50px;
+            padding: 40px;
             .col{
                 background-color: white;
                 height: 300px;
-                padding: 0;
 
                 .city-search{
-                    height: auto;
-                    width: auto;
-                        .search-input{
-                            width: 320px;
-                            height: 40px;
-                            border-radius: 5px;
-                            margin-top: 50px;
-                            padding-left: 20px;
-                            font-size: 20px;
-                            outline: none;
-                            border: 0;
-                            display: table-cell;
-                            -webkit-box-shadow: 4px 4px 37px -5px rgba(0,0,0,0.68); 
-                            box-shadow: 4px 4px 20px -5px rgba(0,0,0,0.68);
+                    height: 50px;
+                    width: 100%;
+                    padding-top: 50px;
+
+                        ul{
+                            margin: 0px;
+                            padding: 0px;
+                            li{
+                                height: 50px;
+                                width: 100%;
+                                display: inline;
+                                .search-input{
+                                    width: 350px;
+                                    height: inherit;
+                                    border-radius: 5px;
+                                    padding-left: 20px;
+                                    margin-right: 15px;
+                                    font-size: 20px;
+                                    outline: none;
+                                    border: 0;
+                                    box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.2);
+                                }
+                                button{
+                                    border-radius: 5px;
+                                    outline: none;
+                                    width: $button-small-width;
+                                    height: 50px;
+                                    background-color: #8C0883;
+                                    border-radius: 5px;
+                                    border: 1px solid $button-border-clr;
+                                    color: #F4F4F4;
+                                    cursor: pointer;
+                                }
+                                button:hover{
+                                    background-color: rgb(184, 17, 184);
+                                    border: 1px solid rgb(184, 17, 184);
+                                }
+                            }
                         }
-                        button{
-                            border-radius: 50%;
-                            outline: none;
-                            width: $button-small-width;
-                            height: 40px;
-                            background-color: #8C0883;
-                            border-radius: 5px;
-                            border: 1px solid $button-border-clr;
-                            color: #F4F4F4;
-                            cursor: pointer;
-                            display: table-cell;
-                            margin-left: 20px;
-                        }
-                        
                     }
-                    .suggested-city{
-                        margin-top: 30px;
-                    }
-                .cities{
+                .suggested-city{
+                    margin-top: 100px;
+
+                }
+                .list-cities{
                     width: auto;
                     height: inherit;
                     padding-top: 30px;
+                    background-color: #F4F4F4;
+                    box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.2);
                     ul{
-                        padding-right: 80px;
+                        padding:10px 50px 10px 50px;
                         display: table-cell;
                         li{
                             padding: 5px;
                             font-size: 20px;
+                            
+                            a{
+                                color: black;
+                            }
+                            a:hover{
+                                text-decoration: none;
+                                color: $button-border-clr;
+                            }
                         }
                     }
                 }
@@ -169,6 +206,19 @@
 .motivation{
     border-top: 1px solid $border-color;
     width: $banner-width;
-    height: $banner-height;
+    height: 100%;
+    .carousel{
+        .carousel-item{
+            width: 100%;
+            height: 550px;
+            .carousel-caption{
+                background: rgba(0,0,0,.5);
+                opacity: 0.7;
+                h3{
+                    color: white;
+                }
+            }
+        }
+    }
 }
 
