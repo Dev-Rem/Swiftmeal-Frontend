@@ -11,7 +11,7 @@ export class Register extends React.Component {
   render() {
     return (
       <div className="base-container" ref={this.props.containerRef}>
-        <div className="login-header">Register</div>
+        <div className="login-header">Sign Up</div>
         <div className="content">
           <div className="image">
             <img src={loginImage} alt="register" />

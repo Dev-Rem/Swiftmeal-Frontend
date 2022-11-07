@@ -1,0 +1,24 @@
+@import "variables";
+@import "base";
+@import "homePage";
+
+    .title{
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-family: 'satisfy';
+        color: $button-border-clr;
+    }
+
+    .container{
+        margin-bottom: 30px;
+    }
+
+    .carousel{
+        margin-top: 20px;
+        .carousel-item{
+            display: flex;
+            flex-direction: column;
+
+        }
+    }

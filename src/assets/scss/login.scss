@@ -3,6 +3,7 @@
 
 
     .base-container {
+    padding: 20px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -76,11 +77,13 @@
 
 
 .LoginPage {
+  margin-top: 100px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Open Sans", sans-serif;
+  
 }
 
 
@@ -88,14 +91,16 @@
 .login-page {
   width: 27em;
   height: 100%;
-  //min-height: 44em;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 5px;
   position: relative;
   z-index: 99;
+  box-shadow: 0px 0px 50px 0.8px #000000b2;
+  
   .login-container {
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -122,7 +127,7 @@
     z-index: 1;
     transition: all 400ms ease-in-out;
     cursor: pointer;
-    box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.281);
+     box-shadow: 0px 0px 50px 0.8px #000000b2;
 
     &.right {
       right: -40%;
@@ -158,6 +163,7 @@
   color: #fff;
   border-radius: 3px;
   transition: all 250ms ease-in-out;
+   box-shadow: 0px 0px 12px 0.8px #000000b2;
   cursor: pointer;
   &:hover {
     background-color: #2386c8;

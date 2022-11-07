@@ -1,12 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { Container, Row, Col, Button, Carousel, Image } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import restaurantImage from "../assets/images/restaurantCard.png";
 import food2 from "../assets/images/food2.png";
 import drinks2 from "../assets/images/drinks2.jpeg";
-import panel1 from "../assets/images/panel1.png";
-import panel2 from "../assets/images/panel2.gif";
-
+import panels1 from "../assets/images/panels1.jpeg";
+import panels2 from "../assets/images/panels2.jpeg";
+import panels3 from "../assets/images/panels3.jpeg";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 const HomePageComponent = () => {
   return (
     <div>
@@ -15,14 +17,8 @@ const HomePageComponent = () => {
           <Row>
             <div className="search-banner">
               <div className="search-bar">
-                <ul>
-                  <li>
-                    <input className="search-input" placeholder="Search" />
-                  </li>
-                  <li>
-                    <Button type="submit"></Button>
-                  </li>
-                </ul>
+                <input className="search-input" placeholder="Search" />
+                <Button type="submit"></Button>
               </div>
             </div>
           </Row>
@@ -31,34 +27,39 @@ const HomePageComponent = () => {
               <Container className="container" fluid>
                 <Row lg="auto">
                   <Col>
-                    <div className="card-image">
-                      <Image
-                        fluid="true"
-                        src={restaurantImage}
-                        alt="Restaurant"
-                      />
-                    </div>
-                    <div className="card-text">
-                      <h1>Restaurants</h1>
-                    </div>
+                    <Link to="/restaurants">
+                      <div className="card-image">
+                        <Image
+                          fluid="true"
+                          src={restaurantImage}
+                          alt="Restaurant"
+                        />
+                      </div>
+                      <div className="card-text">
+                        <h1>Restaurants</h1>
+                      </div>
+                    </Link>
                   </Col>
                   <Col>
-                    <div className="card-text">
-                      {" "}
-                      <h1> Foods</h1>
-                    </div>
-                    <div className="card-image">
-                      <Image fluid="true" src={food2} alt="Foods" />
-                    </div>
+                    <a href="">
+                      <div className="card-text">
+                        {" "}
+                        <h1> Foods</h1>
+                      </div>
+                      <div className="card-image">
+                        <Image fluid="true" src={food2} alt="Foods" />
+                      </div>
+                    </a>
                   </Col>
                   <Col>
-                    <div className="card-image">
-                      <Image fluid="true" src={drinks2} alt="drinks" />
-                    </div>
-                    <div className="card-text">
-                      {" "}
-                      <h1> Drinks</h1>
-                    </div>
+                    <a href="#">
+                      <div className="card-image">
+                        <Image fluid="true" src={drinks2} alt="drinks" />
+                      </div>
+                      <div className="card-text">
+                        <h1> Drinks</h1>
+                      </div>
+                    </a>
                   </Col>
                 </Row>
               </Container>
@@ -67,30 +68,48 @@ const HomePageComponent = () => {
           <Row>
             <div className="cities">
               <div className="title">
-                <h2>Look For The Best Meals And Restaurants Close To You</h2>
+                <h2>Look For The Best Meals And Restaurants Near You</h2>
               </div>
               <Container fluid className="container">
                 <Row>
-                  <Col className="col" sm={7}>
-                    <div className="city-search">
-                      <ul>
-                        <li>
-                          <input
-                            className="search-input"
-                            placeholder="Name of your city"
-                          />
-                        </li>
-                        <li>
-                          <button type="submit">Search</button>
-                        </li>
-                      </ul>
-                    </div>
+                  <Col className="col">
                     <div className="suggested-city">
-                      <p>Based on your Location we believe you are in Abuja</p>
+                      <div className="current-location">
+                        <LocationOnIcon sx={{ color: "#b810b8" }} />
+                        <p>Your Location is Abuja</p>
+                      </div>
+                    </div>
+                    <div className="city-search">
+                      <input
+                        className="search-input"
+                        placeholder="Name of your city"
+                      />
+
+                      <button type="submit">Search</button>
                     </div>
                   </Col>
                   <Col>
                     <div className="list-cities">
+                      <ul>
+                        <li>
+                          <a href="#">Abuja</a>
+                        </li>
+                        <li>
+                          <a href="#">Lagos</a>
+                        </li>
+                        <li>
+                          <a href="#">Jos</a>
+                        </li>
+                        <li>
+                          <a href="#">Benue</a>
+                        </li>
+                        <li>
+                          <a href="#">Kogi</a>
+                        </li>
+                        <li>
+                          <a href="#">Osun</a>
+                        </li>
+                      </ul>
                       <ul>
                         <li>
                           <a href="#">Abuja</a>
@@ -143,7 +162,7 @@ const HomePageComponent = () => {
                 <Carousel.Item className="carousel-item">
                   <img
                     className="d-block w-100"
-                    src={panel1}
+                    src={panels1}
                     alt="First slide"
                   />
                   <Carousel.Caption>
@@ -156,7 +175,7 @@ const HomePageComponent = () => {
                 <Carousel.Item>
                   <img
                     className="d-block w-100"
-                    src={panel2}
+                    src={panels2}
                     alt="Second slide"
                   />
 
@@ -170,7 +189,7 @@ const HomePageComponent = () => {
                 <Carousel.Item>
                   <img
                     className="d-block w-100"
-                    src={panel1}
+                    src={panels3}
                     alt="Third slide"
                   />
 
