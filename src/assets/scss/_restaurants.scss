@@ -2,23 +2,43 @@
 @import "base";
 @import "homePage";
 
-    .title{
-        width: 100%;
-        text-align: center;
-        padding: 10px;
-        font-family: 'satisfy';
-        color: $button-border-clr;
-    }
+.title{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-family: 'satisfy';
+    color: $button-border-clr;
+}
 
-    .container{
-        margin-bottom: 30px;
-    }
+.container{
+    margin-bottom: 30px;
+}
 
-    .carousel{
-        margin-top: 20px;
-        .carousel-item{
-            display: flex;
-            flex-direction: column;
+.carousel{
+    margin-top: 20px;
+.carousel-item{
+    display: flex;
+    flex-direction: column;
+
+.card{
+    box-shadow: 0px 0px 15px 0px rgba(15, 15, 15, 0.2);
+.card-body{
+    background-color: green;
+    height: 150px;
+    padding: 0px;
+}
+            }
 
         }
     }
+
+.restaurant-psge-search-input{
+    max-width: 100%;
+    min-width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.2);
+}

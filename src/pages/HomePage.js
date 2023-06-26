@@ -1,22 +1,19 @@
-import React, { Fragment, useEffect } from "react";
-import { NavBar, Footer, HomePageComponent } from "../components/index";
-
-function HomePage() {
-  useEffect(() => {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
-  }, []);
-
+import React from "react";
+import { Navbar } from "../components/utils/Navbar";
+import { Searchbar } from "../components/HomePage/Searchbar";
+import { Sections } from "../components/HomePage/Sections";
+import { CitySearch } from "../components/HomePage/CitySearch";
+import { AboutUs } from "../components/HomePage/AboutUs";
+import { Footer } from "../components/HomePage/Footer";
+export const HomePage = () => {
   return (
-    <Fragment>
-      <NavBar />
-      <HomePageComponent />
+    <div>
+      <Navbar />
+      <Searchbar />
+      <Sections />
+      <CitySearch />
+      <AboutUs />
       <Footer />
-    </Fragment>
+    </div>
   );
-}
-
-export default HomePage;
+};

@@ -1,19 +1,18 @@
 import React from "react";
 import "../assets/scss/style.scss";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import HomePage from "./HomePage";
-import { LoginPage } from "./LoginPage";
-import RestaurantsPage from "./RestaurantsPage";
+import { ChakraProvider } from "@chakra-ui/react";
+import { HomePage } from "./HomePage";
 
 const App = () => {
   return (
-    <Router basename={"/"}>
-      <Routes>
-        <Route exact path={"/home"} element={<HomePage />} />
-        <Route exact path={"/auth"} element={<LoginPage />} />
-        <Route exact path={"/restaurants"} element={<RestaurantsPage />} />
-      </Routes>
-    </Router>
+    <ChakraProvider>
+      <Router basename={"/"}>
+        <Routes>
+          <Route exact path={"/"} element={<HomePage />} />
+        </Routes>
+      </Router>
+    </ChakraProvider>
   );
 };
 
