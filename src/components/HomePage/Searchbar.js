@@ -8,9 +8,9 @@ export const Searchbar = () => {
     <div className="search-banner-container">
       <div className="search-bar-container">
         <Input
-          placeholder="Search"
+          placeholder="Search for what you crave"
           backgroundColor="white"
-          width="100%"
+          width="30%"
           height={50}
           borderStartRadius={20}
           borderEndRadius={0}

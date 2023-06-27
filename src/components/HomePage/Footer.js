@@ -36,7 +36,7 @@ export const Footer = () => {
             Swiftmeal
           </Text>
         </div>
-        <Text fontSize="2xl">Reach out to us on our socials</Text>
+        <Text fontSize="lg">Reach out and follow us on our socials</Text>
         <div
           style={{
             display: "flex",
@@ -45,19 +45,19 @@ export const Footer = () => {
           }}
         >
           <Link href="https://chakra-ui.com" isExternal>
-            <BsFacebook color="black" size={30} />
+            <BsFacebook color="black" size={25} />
           </Link>
           <Link href="https://chakra-ui.com" isExternal>
-            <BsTwitter color="black" size={30} />
+            <BsTwitter color="black" size={25} />
           </Link>
           <Link href="https://chakra-ui.com" isExternal>
-            <BsInstagram color="black" size={30} />
+            <BsInstagram color="black" size={25} />
           </Link>
           <Link href="https://chakra-ui.com" isExternal>
-            <BsTiktok color="black" size={30} />
+            <BsTiktok color="black" size={25} />
           </Link>
         </div>
-        <Box position="relative" padding="10">
+        <Box position="relative" padding="5">
           <Divider />
           <AbsoluteCenter bg="white" px="4">
             OR
@@ -70,8 +70,8 @@ export const Footer = () => {
             justifyContent: "space-between",
           }}
         >
-          <BsFillTelephoneFill size={23} />
-          <Text>+000 000 000 0000</Text>
+          <BsFillTelephoneFill size={15} />
+          <Text fontSize={15}>+000 000 000 0000</Text>
         </div>
         <div
           style={{
@@ -80,8 +80,8 @@ export const Footer = () => {
             justifyContent: "space-between",
           }}
         >
-          <MdEmail size={25} />
-          <Text>Loremipsum@email.com</Text>
+          <MdEmail size={15} />
+          <Text fontSize={15}>Loremipsum@email.com</Text>
         </div>
         <div
           style={{
@@ -90,12 +90,10 @@ export const Footer = () => {
             justifyContent: "space-between",
           }}
         >
-          <MdLocationPin size={25} />
-          <Text textAlign="right">
-            123 Lorem Street,
-            <br /> City Ipsum, <br />
-            Lorem County, <br />
-            12345 Ipsum.
+          <MdLocationPin size={20} />
+          <Text textAlign="right" fontSize={15}>
+            123 Lorem Street, City Ipsum,
+            <br /> Lorem County, 12345 Ipsum.
           </Text>
         </div>
       </div>
@@ -120,23 +118,45 @@ export const Footer = () => {
         </div>
       </div>
       <div>
-        <Text fontSize={20}>Links</Text>
-        <List fontSize={20} color="#b503a6">
-          <ListItem>
-            <Link>Careers</Link>
+        <Text fontSize={15}>Company</Text>
+        <List fontSize={15} color="#b503a6">
+          <ListItem padding={2}>
+            <Link>About Us</Link>
           </ListItem>
-          <ListItem>
-            <Link>Support Us</Link>
+          <ListItem padding={2}>
+            <Link>What we stand for</Link>
           </ListItem>
-          <ListItem>
-            <Link>Work with us</Link>
+          <ListItem padding={2}>
+            <Link>As an employee</Link>
           </ListItem>
-          <ListItem>
+          <ListItem padding={2}>
+            <Link>Social responsibility</Link>
+          </ListItem>
+          <ListItem padding={2}>
+            <Link>Safety</Link>
+          </ListItem>
+          <ListItem padding={2}>
             <Link>FAQ</Link>
           </ListItem>
         </List>
       </div>
-      <div></div>
+      <div>
+        <Text fontSize={15}>Join Us</Text>
+        <List fontSize={15} color="#b503a6">
+          <ListItem padding={2}>
+            <Link>As a courier</Link>
+          </ListItem>
+          <ListItem padding={2}>
+            <Link>As a restaurant</Link>
+          </ListItem>
+          <ListItem padding={2}>
+            <Link>As a company</Link>
+          </ListItem>
+          <ListItem padding={2}>
+            <Link>As an Investor</Link>
+          </ListItem>
+        </List>
+      </div>
       <div></div>
     </div>
   );

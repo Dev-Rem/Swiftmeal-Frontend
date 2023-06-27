@@ -25,13 +25,8 @@ export const Navbar = () => {
           </Text>
         </div>
 
-        <ButtonGroup gap="6" paddingTop={15}>
-          <Button
-            backgroundColor="white"
-            color="#b503a6"
-            variant="outline"
-            _hover={{ bg: "#b503a6", color: "white" }}
-          >
+        <ButtonGroup paddingTop={15}>
+          <Button backgroundColor="white" color="#b503a6" variant="ghost">
             Sign In
           </Button>
           <Button
