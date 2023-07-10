@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Heading, Image, Text } from "@chakra-ui/react";
+import { Card, Heading, Image } from "@chakra-ui/react";
 
 export const RestaurantList = () => {
   return (
@@ -16,7 +16,7 @@ export const RestaurantList = () => {
       <div className="category-container"></div>
 
       <div className="restaurant-list">
-        <Card maxW="sm" height="100%" borderRadius={20}>
+        <Card maxW="sm" height="100%" borderRadius={10}>
           <Image
             src={require("../../assets/images/sweets.jpeg")}
             alt="Green double couch with wooden legs"

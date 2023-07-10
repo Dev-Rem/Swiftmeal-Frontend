@@ -20,13 +20,13 @@ export const Sections = () => {
       </div>
       <Wrap spacing="50px" justify="center" pt={10} pl={10}>
         <WrapItem>
-          <Link to={"/list"} style={{ textDecoration: "none" }}>
+          <Link to={"/restaurants"} style={{ textDecoration: "none" }}>
             <div className="options-container">
-              <Card maxW="sm" height="100%" borderRadius={20}>
+              <Card maxW="sm" height="100%" borderRadius={10}>
                 <Image
                   src={require("../../assets/images/restaurantCard.png")}
                   alt="Green double couch with wooden legs"
-                  borderTopRadius="lg"
+                  borderTopRadius={10}
                 />
                 <div className="card-text">
                   <Heading
@@ -48,7 +48,7 @@ export const Sections = () => {
         <WrapItem>
           <Link to={"#"} style={{ textDecoration: "none" }}>
             <div className="options-container">
-              <Card maxW="sm" height="100%" borderRadius={20}>
+              <Card maxW="sm" height="100%" borderRadius={10}>
                 <Image
                   src={require("../../assets/images/meals.jpeg")}
                   alt="Green double couch with wooden legs"
@@ -75,7 +75,7 @@ export const Sections = () => {
         <WrapItem>
           <Link to={"#"} style={{ textDecoration: "none" }}>
             <div className="options-container">
-              <Card maxW="sm" height="100%" borderRadius={20}>
+              <Card maxW="sm" height="100%" borderRadius={10}>
                 <Image
                   src={require("../../assets/images/drinks2.jpeg")}
                   alt="Green double couch with wooden legs"
@@ -102,7 +102,7 @@ export const Sections = () => {
         <WrapItem>
           <Link to={"#"} style={{ textDecoration: "none" }}>
             <div className="options-container">
-              <Card maxW="sm" height="100%" borderRadius={20}>
+              <Card maxW="sm" height="100%" borderRadius={10}>
                 <Image
                   src={require("../../assets/images/sweets.jpeg")}
                   alt="Green double couch with wooden legs"
