@@ -3,7 +3,7 @@ import "../assets/scss/style.scss";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
 import { HomePage } from "./HomePage";
-import { RestaurantListPage } from "./RestaurantListPage";
+import { RestaurantListPage, MealListPage } from "./ListPage";
 import { SignInPage, SignUpPage } from "./AuthPages";
 
 const App = () => {
@@ -13,6 +13,7 @@ const App = () => {
         <Routes>
           <Route exact path={"/"} element={<HomePage />} />
           <Route exact path={"/restaurants"} element={<RestaurantListPage />} />
+          <Route exact path={"/meals"} element={<MealListPage />} />
           <Route exact path={"/signin"} element={<SignInPage />} />
           <Route exact path={"/signup"} element={<SignUpPage />} />
         </Routes>

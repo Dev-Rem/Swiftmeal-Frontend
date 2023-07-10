@@ -46,7 +46,7 @@ export const Sections = () => {
           </Link>
         </WrapItem>
         <WrapItem>
-          <Link to={"#"} style={{ textDecoration: "none" }}>
+          <Link to={"/meals"} style={{ textDecoration: "none" }}>
             <div className="options-container">
               <Card maxW="sm" height="100%" borderRadius={10}>
                 <Image
