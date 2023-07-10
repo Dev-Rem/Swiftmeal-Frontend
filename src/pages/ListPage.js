@@ -3,6 +3,7 @@ import { RestaurantList } from "../components/ListPage/RestaurantList";
 import { MealList } from "../components/ListPage/MealList";
 import { Navbar } from "../components/utils/Navbar";
 import { DrinkList } from "../components/ListPage/DrinkList";
+import { SweetList } from "../components/ListPage/SweetList";
 
 export const RestaurantListPage = () => {
   return (
@@ -27,6 +28,15 @@ export const DrinkListPage = () => {
     <div>
       <Navbar />
       <DrinkList />
+    </div>
+  );
+};
+
+export const SweetListPage = () => {
+  return (
+    <div>
+      <Navbar />
+      <SweetList />
     </div>
   );
 };
