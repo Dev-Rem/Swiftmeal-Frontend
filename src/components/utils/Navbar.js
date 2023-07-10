@@ -3,6 +3,7 @@ import logo from "../../assets/images/logo.png";
 import { Image } from "@chakra-ui/react";
 import { Button, ButtonGroup } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
@@ -26,17 +27,22 @@ export const Navbar = () => {
         </div>
 
         <ButtonGroup paddingTop={15}>
-          <Button backgroundColor="white" color="#b503a6" variant="ghost">
-            Sign In
-          </Button>
-          <Button
-            backgroundColor="#b503a6"
-            color="white"
-            variant="outline"
-            _hover={{ bg: "white", color: "#b503a6" }}
-          >
-            Sign Up
-          </Button>
+          <Link to={"/signin"}>
+            <Button backgroundColor="white" color="#b503a6" variant="ghost">
+              Sign In
+            </Button>
+          </Link>
+
+          <Link to={"/signup"}>
+            <Button
+              backgroundColor="#b503a6"
+              color="white"
+              variant="outline"
+              _hover={{ bg: "white", color: "#b503a6" }}
+            >
+              Sign Up
+            </Button>
+          </Link>
         </ButtonGroup>
       </div>
     </div>
