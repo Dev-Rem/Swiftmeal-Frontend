@@ -2,6 +2,7 @@ import React from "react";
 import { RestaurantList } from "../components/ListPage/RestaurantList";
 import { MealList } from "../components/ListPage/MealList";
 import { Navbar } from "../components/utils/Navbar";
+import { DrinkList } from "../components/ListPage/DrinkList";
 
 export const RestaurantListPage = () => {
   return (
@@ -17,6 +18,15 @@ export const MealListPage = () => {
     <div>
       <Navbar />
       <MealList />
+    </div>
+  );
+};
+
+export const DrinkListPage = () => {
+  return (
+    <div>
+      <Navbar />
+      <DrinkList />
     </div>
   );
 };

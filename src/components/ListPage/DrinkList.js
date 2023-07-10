@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Heading, Image } from "@chakra-ui/react";
 
-export const MealList = () => {
+export const DrinkList = () => {
   return (
     <div className="restaurant-listpage-container">
       <Heading
@@ -10,7 +10,7 @@ export const MealList = () => {
         fontFamily={("Tangerine", "cursive")}
         color="#b503a6"
       >
-        Meals - {"Abuja, Nigeria"}
+        Drinks - {"Abuja, Nigeria"}
       </Heading>
 
       <div className="category-container"></div>
@@ -29,7 +29,7 @@ export const MealList = () => {
               color="#b503a6"
               fontFamily={("Tangerine", "cursive")}
             >
-              Pasta
+              Apple Juice
             </Heading>
             <div
               style={{
@@ -40,7 +40,7 @@ export const MealList = () => {
             >
               <div>
                 <p>Price:</p>
-                <p>Ingredients:</p>
+                <p>Description:</p>
               </div>
               <div
                 style={{
