@@ -161,7 +161,7 @@
 
 .footer-banner-container{
     width: 100%;
-    min-height: 400px;
+    min-height: 700px;
     background-color: white;
     display: flex;
     flex-direction: row;
@@ -206,4 +206,8 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+*:focus {
+  outline: none;
 }

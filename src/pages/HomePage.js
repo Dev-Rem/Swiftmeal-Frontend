@@ -4,7 +4,7 @@ import { Searchbar } from "../components/HomePage/Searchbar";
 import { Sections } from "../components/HomePage/Sections";
 import { CitySearch } from "../components/HomePage/CitySearch";
 import { AboutUs } from "../components/HomePage/AboutUs";
-import { Footer } from "../components/HomePage/Footer";
+import { Footer } from "../components/utils/Footer";
 export const HomePage = () => {
   return (
     <div>

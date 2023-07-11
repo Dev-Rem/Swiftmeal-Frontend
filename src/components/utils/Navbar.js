@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../assets/images/logo.png";
+import { Link } from "react-router-dom";
 import { Image } from "@chakra-ui/react";
 import { Button, ButtonGroup } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
@@ -15,9 +16,8 @@ import {
   MenuDivider,
 } from "@chakra-ui/react";
 import { AuthForm } from "./AuthForm";
-
 export const Navbar = () => {
-  const [signedIn, setSignedIn] = React.useState(false);
+  const [signedIn, setSignedIn] = React.useState(true);
   const [showModal, setShowModal] = React.useState(false);
   const [use, setUse] = React.useState("");
 
@@ -57,15 +57,18 @@ export const Navbar = () => {
                 />
               </MenuButton>
               <MenuList>
-                <MenuItem icon={<MdAccountCircle size={30} />}>
-                  Account
-                </MenuItem>
+                <Link to={"/account"} style={{ textDecoration: "none" }}>
+                  <MenuItem icon={<MdAccountCircle size={30} />}>
+                    Account
+                  </MenuItem>
+                </Link>
+
                 <MenuDivider />
                 <MenuItem icon={<GiHouse size={30} />}>
                   Delivery Addresses
                 </MenuItem>
                 <MenuDivider />
-                <MenuItem icon={<MdOutlineLogout size={30} />}>
+                <MenuItem icon={<MdOutlineLogout size={30} color="red" />}>
                   Sign Out
                 </MenuItem>
               </MenuList>

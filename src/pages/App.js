@@ -10,6 +10,8 @@ import {
   SweetListPage,
 } from "./ListPage";
 
+import { AccountPage } from "./AccountPage";
+
 const App = () => {
   return (
     <ChakraProvider>
@@ -20,6 +22,7 @@ const App = () => {
           <Route exact path={"/meals"} element={<MealListPage />} />
           <Route exact path={"/drinks"} element={<DrinkListPage />} />
           <Route exact path={"/sweets"} element={<SweetListPage />} />
+          <Route exact path={"/account"} element={<AccountPage />} />
         </Routes>
       </Router>
     </ChakraProvider>

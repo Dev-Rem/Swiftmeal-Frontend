@@ -15,7 +15,7 @@ export const Sections = () => {
           fontFamily={("Tangerine", "cursive")}
           color="#b503a6"
         >
-          What would you like to do today?
+          What would you like today?
         </Heading>
       </div>
       <Wrap spacing="50px" justify="center" pt={10} pl={10}>
