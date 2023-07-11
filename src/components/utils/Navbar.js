@@ -8,6 +8,8 @@ import { Icon } from "@chakra-ui/react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdAccountCircle, MdOutlineLogout } from "react-icons/md";
 import { GiHouse } from "react-icons/gi";
+import { FaQuestion } from "react-icons/fa";
+import { BsBagCheckFill } from "react-icons/bs";
 import {
   Menu,
   MenuButton,
@@ -64,9 +66,17 @@ export const Navbar = () => {
                 </Link>
 
                 <MenuDivider />
-                <MenuItem icon={<GiHouse size={30} />}>
-                  Delivery Addresses
+                <MenuItem icon={<GiHouse size={20} />}>
+                  Delivery Address
                 </MenuItem>
+                <MenuDivider />
+
+                <MenuItem icon={<BsBagCheckFill size={20} />}>
+                  Order History
+                </MenuItem>
+                <MenuDivider />
+
+                <MenuItem icon={<FaQuestion size={20} />}>FAQs</MenuItem>
                 <MenuDivider />
                 <MenuItem icon={<MdOutlineLogout size={30} color="red" />}>
                   Sign Out
