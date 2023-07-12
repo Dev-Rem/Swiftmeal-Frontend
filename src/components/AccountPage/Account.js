@@ -5,8 +5,15 @@ import AvatarImage from "../../assets/images/restaurantCard.png";
 import { Link } from "react-router-dom";
 import { AiOutlinePlus } from "react-icons/ai";
 import { Divider } from "@chakra-ui/react";
+import { AddPaymentForm } from "../utils/AddPaymentForm";
 
 export const Account = () => {
+  const [showModal, setShowModal] = React.useState(false);
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
   return (
     <div className="account-page-container">
       <div className="account-info-container">
@@ -48,6 +55,7 @@ export const Account = () => {
             color="white"
             variant="outline"
             _hover={{ bg: "white", color: "#b503a6" }}
+            onClick={() => openModal()}
           >
             Add
           </Button>
@@ -163,6 +171,12 @@ export const Account = () => {
           </Link>
         </div>
       </div>
+      {showModal && (
+        <AddPaymentForm
+          onClose={() => setShowModal(false)}
+          isOpen={showModal}
+        />
+      )}
     </div>
   );
 };

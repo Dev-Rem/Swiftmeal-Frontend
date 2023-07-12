@@ -23,29 +23,31 @@ export const Navbar = () => {
   const [showModal, setShowModal] = React.useState(false);
   const [use, setUse] = React.useState("");
 
-  function openModal(use) {
+  const openModal = (use) => {
     setShowModal(true);
     setUse(use);
-  }
+  };
   return (
     <div className="navbar-container">
       <div className="navbar-options-container">
-        <div className="logo-text">
-          <Image
-            boxSize="80px"
-            objectFit="cover"
-            src={logo}
-            alt="Swiftmeal logo"
-          />
-          <Text
-            fontSize="3xl"
-            color="#b503a6"
-            fontFamily={("Tangerine", "cursive")}
-            marginTop={4}
-          >
-            Swiftmeal
-          </Text>
-        </div>
+        <Link to={"/"} style={{ textDecoration: "none" }}>
+          <div className="logo-text">
+            <Image
+              boxSize="80px"
+              objectFit="cover"
+              src={logo}
+              alt="Swiftmeal logo"
+            />
+            <Text
+              fontSize="3xl"
+              color="#b503a6"
+              fontFamily={("Tangerine", "cursive")}
+              marginTop={4}
+            >
+              Swiftmeal
+            </Text>
+          </div>
+        </Link>
 
         {signedIn ? (
           <>
