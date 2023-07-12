@@ -7,7 +7,8 @@ import { Divider } from "@chakra-ui/react";
 import { AddPaymentForm } from "../utils/Forms/AddPaymentForm";
 import { AddAddressForm } from "../utils/Forms/AddAddressForm";
 import { Card, CardBody, CardFooter, Icon } from "@chakra-ui/react";
-import { MdDelete, MdEdit } from "react-icons/md";
+import { MdDelete, MdEdit, MdOutlineLogout } from "react-icons/md";
+import { PersonalInfoEditForm } from "../utils/Forms/PersonalInfoEditForm";
 export const Account = () => {
   const [showModal, setShowModal] = React.useState(false);
   const [use, setUse] = React.useState("");
@@ -29,10 +30,20 @@ export const Account = () => {
             src={AvatarImage}
             marginBottom={10}
           />
+          <Button
+            rightIcon={<MdEdit />}
+            backgroundColor="#b503a6"
+            color="white"
+            variant="outline"
+            _hover={{ bg: "white", color: "#b503a6" }}
+            onClick={() => openModal("")}
+          >
+            Edit
+          </Button>
         </div>
         <div className="user-info">
           <Text fontSize="xl" color="#6c6d6d">
-            Name
+            Full Name
           </Text>
           <Text fontSize="xl">Aremu Oluwaseyi Festus</Text>
         </div>
@@ -40,13 +51,13 @@ export const Account = () => {
           <Text fontSize="xl" color="#6c6d6d">
             Email
           </Text>
-          <Text fontSize="xl">swiftmeal@gmail.com</Text>
+          <Text fontSize="xl">swiftmeal@gmaiil.com</Text>
         </div>
         <div className="user-info">
           <Text fontSize="xl" color="#6c6d6d">
-            Phone number
+            Phone Number
           </Text>
-          <Text fontSize="xl">+234302939230</Text>
+          <Text fontSize="xl">+2340889797987</Text>
         </div>
         <Divider />
 
@@ -233,39 +244,9 @@ export const Account = () => {
         </div>
         <div className="user-info">
           <Text fontSize="xl" color="#6c6d6d">
-            Name
-          </Text>
-          <Link>
-            <Text fontSize="xl" color="#b503a6">
-              Aremu Oluwaseyi Festus
-            </Text>
-          </Link>
-        </div>
-        <div className="user-info">
-          <Text fontSize="xl" color="#6c6d6d">
-            Email
-          </Text>
-          <Link>
-            <Text fontSize="xl" color="#b503a6">
-              swiftmeal@gmaiil.com
-            </Text>
-          </Link>
-        </div>
-        <div className="user-info">
-          <Text fontSize="xl" color="#6c6d6d">
-            Phone Number
-          </Text>
-          <Link>
-            <Text fontSize="xl" color="#b503a6">
-              +2340889797987
-            </Text>
-          </Link>
-        </div>
-        <div className="user-info">
-          <Text fontSize="xl" color="#6c6d6d">
             Country
           </Text>
-          <Link>
+          <Link style={{ textDecoration: "none" }}>
             <Text fontSize="xl" color="#b503a6">
               +2340889797987
             </Text>
@@ -293,6 +274,7 @@ export const Account = () => {
               color="white"
               variant="outline"
               _hover={{ bg: "white", color: "#b503a6" }}
+              rightIcon={<MdDelete />}
             >
               Delete
             </Button>
@@ -308,6 +290,7 @@ export const Account = () => {
               color="white"
               variant="outline"
               _hover={{ bg: "white", color: "#b503a6" }}
+              rightIcon={<MdOutlineLogout />}
             >
               Sign out
             </Button>
@@ -326,6 +309,14 @@ export const Account = () => {
       {showModal && (use === "add-address" || use === "edit-address") ? (
         <AddAddressForm
           use={use}
+          onClose={() => setShowModal(false)}
+          isOpen={showModal}
+        />
+      ) : (
+        <></>
+      )}
+      {showModal ? (
+        <PersonalInfoEditForm
           onClose={() => setShowModal(false)}
           isOpen={showModal}
         />
