@@ -17,7 +17,7 @@ import {
   MenuItem,
   MenuDivider,
 } from "@chakra-ui/react";
-import { AuthForm } from "./AuthForm";
+import { AuthForm } from "./Forms/AuthForm";
 export const Navbar = () => {
   const [signedIn, setSignedIn] = React.useState(true);
   const [showModal, setShowModal] = React.useState(false);

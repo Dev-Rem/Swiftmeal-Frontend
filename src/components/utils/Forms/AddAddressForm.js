@@ -8,17 +8,8 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
-import {
-  Text,
-  Input,
-  Stack,
-  Button,
-  InputGroup,
-  InputRightElement,
-} from "@chakra-ui/react";
+import { Text, Input, Stack, Button } from "@chakra-ui/react";
 export const AddAddressForm = (props) => {
-  const [show, setShow] = React.useState(false);
-  const handleClick = () => setShow(!show);
   return (
     <div>
       <Modal isOpen={props.isOpen} onClose={props.onClose}>
@@ -26,7 +17,9 @@ export const AddAddressForm = (props) => {
         <ModalContent>
           <ModalHeader>
             <Text fontSize="3xl" fontWeight={"bold"}>
-              Add New Address
+              {props.use === "add-address"
+                ? "Add Address Info"
+                : "Edit Address Info"}
             </Text>
           </ModalHeader>
           <ModalCloseButton />
@@ -86,7 +79,7 @@ export const AddAddressForm = (props) => {
               variant="outline"
               _hover={{ bg: "white", color: "#b503a6" }}
             >
-              Add Address
+              {props.use === "add-address" ? "Add Address" : "Edit Address"}
             </Button>
           </ModalFooter>
         </ModalContent>

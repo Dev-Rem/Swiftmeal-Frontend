@@ -48,7 +48,9 @@ export const AddPaymentForm = (props) => {
         <ModalContent>
           <ModalHeader>
             <Text fontSize="3xl" fontWeight={"bold"}>
-              Add Payment Details
+              {props.use === "add-payment"
+                ? "Add Payment Details"
+                : "Edit Payment Details"}
             </Text>
           </ModalHeader>
           <ModalCloseButton />
@@ -125,7 +127,7 @@ export const AddPaymentForm = (props) => {
               variant="outline"
               _hover={{ bg: "white", color: "#b503a6" }}
             >
-              Add Payment Method
+              {props.use === "add-payment" ? "Add Payment" : "Edit Payment"}
             </Button>
           </ModalFooter>
         </ModalContent>
