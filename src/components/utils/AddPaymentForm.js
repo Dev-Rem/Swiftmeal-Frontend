@@ -16,17 +16,6 @@ import {
   InputGroup,
   InputRightElement,
 } from "@chakra-ui/react";
-import {
-  Table,
-  Thead,
-  Tbody,
-  Tfoot,
-  Tr,
-  Th,
-  Td,
-  TableCaption,
-  TableContainer,
-} from "@chakra-ui/react";
 import { NumberInput, NumberInputField } from "@chakra-ui/react";
 
 export const AddPaymentForm = (props) => {
@@ -59,7 +48,7 @@ export const AddPaymentForm = (props) => {
         <ModalContent>
           <ModalHeader>
             <Text fontSize="3xl" fontWeight={"bold"}>
-              Payment Details
+              Add Payment Details
             </Text>
           </ModalHeader>
           <ModalCloseButton />

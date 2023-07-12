@@ -1,16 +1,18 @@
 import React from "react";
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { Avatar, Text, Button, Switch } from "@chakra-ui/react";
 import AvatarImage from "../../assets/images/restaurantCard.png";
 import { Link } from "react-router-dom";
 import { AiOutlinePlus } from "react-icons/ai";
 import { Divider } from "@chakra-ui/react";
 import { AddPaymentForm } from "../utils/AddPaymentForm";
+import { AddAddressForm } from "../utils/AddAddressForm";
 
 export const Account = () => {
   const [showModal, setShowModal] = React.useState(false);
+  const [use, setUse] = React.useState("");
 
-  const openModal = () => {
+  const openModal = (use) => {
+    setUse(use);
     setShowModal(true);
   };
 
@@ -55,7 +57,7 @@ export const Account = () => {
             color="white"
             variant="outline"
             _hover={{ bg: "white", color: "#b503a6" }}
-            onClick={() => openModal()}
+            onClick={() => openModal("payment")}
           >
             Add
           </Button>
@@ -74,6 +76,7 @@ export const Account = () => {
             color="white"
             variant="outline"
             _hover={{ bg: "white", color: "#b503a6" }}
+            onClick={() => openModal("address")}
           >
             Add
           </Button>
@@ -171,11 +174,21 @@ export const Account = () => {
           </Link>
         </div>
       </div>
-      {showModal && (
+      {showModal && use === "payment" ? (
         <AddPaymentForm
           onClose={() => setShowModal(false)}
           isOpen={showModal}
         />
+      ) : (
+        <></>
+      )}
+      {showModal && use === "address" ? (
+        <AddAddressForm
+          onClose={() => setShowModal(false)}
+          isOpen={showModal}
+        />
+      ) : (
+        <></>
       )}
     </div>
   );
