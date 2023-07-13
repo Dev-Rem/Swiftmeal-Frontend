@@ -9,15 +9,29 @@ import { AddAddressForm } from "../utils/Forms/AddAddressForm";
 import { Card, CardBody, CardFooter, Icon } from "@chakra-ui/react";
 import { MdDelete, MdEdit, MdOutlineLogout } from "react-icons/md";
 import { PersonalInfoEditForm } from "../utils/Forms/PersonalInfoEditForm";
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+import { BsChevronDown } from "react-icons/bs";
+import {
+  CountryDropdown,
+  RegionDropdown,
+  CountryRegionData,
+} from "react-country-region-selector";
+
 export const Account = () => {
   const [showModal, setShowModal] = React.useState(false);
   const [use, setUse] = React.useState("");
-  const [havePayment, useHavePayment] = React.useState(true);
-  const [haveAddress, useHaveAddress] = React.useState(true);
+  const [havePayment, setHavePayment] = React.useState(true);
+  const [haveAddress, setHaveAddress] = React.useState(true);
+  const [country, setCountry] = React.useState("");
+  const [region, setRegion] = React.useState("");
 
   const openModal = (use) => {
     setUse(use);
     setShowModal(true);
+  };
+
+  const handleCountryChange = (val) => {
+    setCountry(val);
   };
 
   return (
@@ -246,11 +260,19 @@ export const Account = () => {
           <Text fontSize="xl" color="#6c6d6d">
             Country
           </Text>
-          <Link style={{ textDecoration: "none" }}>
-            <Text fontSize="xl" color="#b503a6">
-              +2340889797987
-            </Text>
-          </Link>
+          <CountryDropdown
+            value={country}
+            onChange={(val) => handleCountryChange(val)}
+            style={{
+              width: "150px",
+              backgroundColor: "#b503a6",
+              color: "white",
+              _hover: { bg: "white", color: "#b503a6" },
+              height: "40px",
+              borderRadius: "5px",
+              padding: "10px",
+            }}
+          />
         </div>
         <div className="user-info">
           <Text fontSize="xl" color="#6c6d6d">

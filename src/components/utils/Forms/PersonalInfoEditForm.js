@@ -35,7 +35,7 @@ export const PersonalInfoEditForm = (props) => {
                   <Text fontWeight={"bold"} mb="5px">
                     Profile Photo *
                   </Text>
-                  <Input placeholder="Street" backgroundColor={"white"} />
+                  <input type="file" />
                 </div>
 
                 <div>
