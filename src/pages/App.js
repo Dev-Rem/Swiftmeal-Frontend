@@ -10,7 +10,7 @@ import {
   SweetListPage,
 } from "./ListPage";
 
-import { AccountPage } from "./AccountPage";
+import { AccountPage, OrderHistoryPage } from "./AccountPage";
 
 const App = () => {
   return (
@@ -23,6 +23,7 @@ const App = () => {
           <Route exact path={"/drinks"} element={<DrinkListPage />} />
           <Route exact path={"/sweets"} element={<SweetListPage />} />
           <Route exact path={"/account"} element={<AccountPage />} />
+          <Route exact path={"/order-history"} element={<OrderHistoryPage />} />
         </Routes>
       </Router>
     </ChakraProvider>

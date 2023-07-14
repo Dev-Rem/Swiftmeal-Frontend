@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Heading, Image } from "@chakra-ui/react";
 
+
 export const RestaurantList = () => {
   return (
     <div className="restaurant-listpage-container">

@@ -72,10 +72,12 @@ export const Navbar = () => {
                   Delivery Address
                 </MenuItem>
                 <MenuDivider />
+                <Link to={"/order-history"} style={{ textDecoration: "none" }}>
+                  <MenuItem icon={<BsBagCheckFill size={20} />}>
+                    Order History
+                  </MenuItem>
+                </Link>
 
-                <MenuItem icon={<BsBagCheckFill size={20} />}>
-                  Order History
-                </MenuItem>
                 <MenuDivider />
 
                 <MenuItem icon={<FaQuestion size={20} />}>FAQs</MenuItem>
