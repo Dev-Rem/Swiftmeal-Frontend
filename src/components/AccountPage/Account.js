@@ -9,13 +9,8 @@ import { AddAddressForm } from "../utils/Forms/AddAddressForm";
 import { Card, CardBody, CardFooter, Icon } from "@chakra-ui/react";
 import { MdDelete, MdEdit, MdOutlineLogout } from "react-icons/md";
 import { PersonalInfoEditForm } from "../utils/Forms/PersonalInfoEditForm";
-import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
-import { BsChevronDown } from "react-icons/bs";
-import {
-  CountryDropdown,
-  RegionDropdown,
-  CountryRegionData,
-} from "react-country-region-selector";
+import { CountryDropdown } from "react-country-region-selector";
+import { axiosInstance } from "../utils/AxiosInstance";
 
 export const Account = () => {
   const [showModal, setShowModal] = React.useState(false);
@@ -23,16 +18,25 @@ export const Account = () => {
   const [havePayment, setHavePayment] = React.useState(true);
   const [haveAddress, setHaveAddress] = React.useState(true);
   const [country, setCountry] = React.useState("");
-  const [region, setRegion] = React.useState("");
+  const [data, setData] = React.useState({});
 
   const openModal = (use) => {
     setUse(use);
     setShowModal(true);
   };
 
+  const getUserInfo = async () => {
+    const res = await axiosInstance.get("/auth/user");
+    setData(res.data);
+  };
+
   const handleCountryChange = (val) => {
     setCountry(val);
   };
+
+  React.useEffect(() => {
+    getUserInfo();
+  }, []);
 
   return (
     <div className="account-page-container">
@@ -50,7 +54,7 @@ export const Account = () => {
             color="white"
             variant="outline"
             _hover={{ bg: "white", color: "#b503a6" }}
-            onClick={() => openModal("")}
+            onClick={() => openModal("edit-personal-info")}
           >
             Edit
           </Button>
@@ -59,19 +63,21 @@ export const Account = () => {
           <Text fontSize="xl" color="#6c6d6d">
             Full Name
           </Text>
-          <Text fontSize="xl">Aremu Oluwaseyi Festus</Text>
+          <Text fontSize="xl">
+            {data.firstName} {data.lastName}
+          </Text>
         </div>
         <div className="user-info">
           <Text fontSize="xl" color="#6c6d6d">
             Email
           </Text>
-          <Text fontSize="xl">swiftmeal@gmaiil.com</Text>
+          <Text fontSize="xl">{data.email}</Text>
         </div>
         <div className="user-info">
           <Text fontSize="xl" color="#6c6d6d">
             Phone Number
           </Text>
-          <Text fontSize="xl">+2340889797987</Text>
+          <Text fontSize="xl">{data.phoneNumber}</Text>
         </div>
         <Divider />
 
@@ -337,7 +343,7 @@ export const Account = () => {
       ) : (
         <></>
       )}
-      {showModal ? (
+      {showModal && use === "edit-personal-info" ? (
         <PersonalInfoEditForm
           onClose={() => setShowModal(false)}
           isOpen={showModal}
