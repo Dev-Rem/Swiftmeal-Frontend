@@ -18,8 +18,12 @@ import {
   MenuDivider,
 } from "@chakra-ui/react";
 import { AuthForm } from "./Forms/AuthForm";
+import { axiosInstance } from "./AxiosInstance";
+
 export const Navbar = () => {
-  const [signedIn, setSignedIn] = React.useState(true);
+  const [signedIn, setSignedIn] = React.useState(
+    localStorage.getItem("signedIn")
+  );
   const [showModal, setShowModal] = React.useState(false);
   const [use, setUse] = React.useState("");
 
@@ -27,6 +31,16 @@ export const Navbar = () => {
     setShowModal(true);
     setUse(use);
   };
+  const signoutUSer = async () => {
+    console.log("got here");
+    const res = await axiosInstance.post("/auth/signout", (error, res) => {
+    });
+    localStorage.removeItem("authorization");
+    localStorage.removeItem("signedIn");
+    localStorage.removeItem("userInfo");
+    window.location.reload();
+  };
+
   return (
     <div className="navbar-container">
       <div className="navbar-options-container">
@@ -82,7 +96,10 @@ export const Navbar = () => {
 
                 <MenuItem icon={<FaQuestion size={20} />}>FAQs</MenuItem>
                 <MenuDivider />
-                <MenuItem icon={<MdOutlineLogout size={30} color="red" />}>
+                <MenuItem
+                  icon={<MdOutlineLogout size={30} color="red" />}
+                  onClick={() => signoutUSer()}
+                >
                   Sign Out
                 </MenuItem>
               </MenuList>

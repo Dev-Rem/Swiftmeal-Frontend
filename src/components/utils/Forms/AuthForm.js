@@ -6,6 +6,7 @@ import {
   Button,
   InputGroup,
   InputRightElement,
+  InputLeftAddon,
 } from "@chakra-ui/react";
 import {
   Modal,
@@ -17,11 +18,39 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { axiosInstance } from "../AxiosInstance";
 
 export const AuthForm = (props) => {
   const [show, setShow] = React.useState(false);
   const [use, setUse] = React.useState(props.use);
+  const [data, setData] = React.useState({});
+
   const handleClick = () => setShow(!show);
+
+  const handleChange = (event) => {
+    const val = event.target.value;
+    const key = event.target.name;
+    setData((prevState) => {
+      return { ...prevState, [key]: val };
+    });
+  };
+
+  const signinUser = async () => {
+    const res = await axios.post("http://localhost:4000/api/auth/signin", data);
+    localStorage.setItem("authorization", res.data.token);
+    localStorage.setItem("signedIn", true);
+    window.location.reload();
+  };
+
+  const signupUser = async () => {
+    const res = await axiosInstance.post(
+      "http://localhost:4000/api/auth/signup",
+      data
+    );
+    window.location.reload();
+  };
+
   return (
     <>
       <Modal isOpen={props.isOpen} onClose={props.onClose}>
@@ -49,7 +78,13 @@ export const AuthForm = (props) => {
                     <Text fontWeight={"bold"} mb="5px">
                       Email *
                     </Text>
-                    <Input placeholder="Email" backgroundColor={"white"} />
+                    <Input
+                      placeholder="Email"
+                      backgroundColor={"white"}
+                      onChange={handleChange}
+                      name="email"
+                      value={data.email}
+                    />
                   </div>
 
                   <div>
@@ -61,6 +96,9 @@ export const AuthForm = (props) => {
                         placeholder="Password"
                         backgroundColor={"white"}
                         type={show ? "text" : "password"}
+                        onChange={handleChange}
+                        name="password"
+                        value={data.password}
                       />
                       <InputRightElement width="4.5rem">
                         <Button h="1.75rem" size="sm" onClick={handleClick}>
@@ -86,13 +124,20 @@ export const AuthForm = (props) => {
                       <Input
                         placeholder="Firstname"
                         backgroundColor={"white"}
+                        onChange={handleChange}
+                        name="firstname"
                       />
                     </div>
                     <div>
                       <Text fontWeight={"bold"} mb="5px">
                         Lastname *
                       </Text>
-                      <Input placeholder="Lastname" backgroundColor={"white"} />
+                      <Input
+                        placeholder="Lastname"
+                        backgroundColor={"white"}
+                        onChange={handleChange}
+                        name="lastname"
+                      />
                     </div>
                   </div>
                   <div>
@@ -102,7 +147,24 @@ export const AuthForm = (props) => {
                     <Input
                       placeholder="Email Address"
                       backgroundColor={"white"}
+                      onChange={handleChange}
+                      name="email"
                     />
+                  </div>
+                  <div>
+                    <Text fontWeight={"bold"} mb="5px">
+                      Phone Number *
+                    </Text>
+                    <InputGroup>
+                      <InputLeftAddon children="+234" />
+                      <Input
+                        type="tel"
+                        placeholder="Phone Number"
+                        backgroundColor={"white"}
+                        onChange={handleChange}
+                        name="phoneNumber"
+                      />
+                    </InputGroup>
                   </div>
                   <div>
                     <Text fontWeight={"bold"} mb="5px">
@@ -113,6 +175,8 @@ export const AuthForm = (props) => {
                         placeholder="Password"
                         backgroundColor={"white"}
                         type={show ? "text" : "password"}
+                        onChange={handleChange}
+                        name="password"
                       />
                       <InputRightElement width="4.5rem">
                         <Button h="1.75rem" size="sm" onClick={handleClick}>
@@ -131,6 +195,8 @@ export const AuthForm = (props) => {
                         placeholder="Confirm Password"
                         backgroundColor={"white"}
                         type={show ? "text" : "password"}
+                        onChange={handleChange}
+                        name="confirm-password"
                       />
                       <InputRightElement width="4.5rem">
                         <Button h="1.75rem" size="sm" onClick={handleClick}>
@@ -171,14 +237,27 @@ export const AuthForm = (props) => {
           </ModalBody>
 
           <ModalFooter>
-            <Button
-              backgroundColor="#b503a6"
-              color="white"
-              variant="outline"
-              _hover={{ bg: "white", color: "#b503a6" }}
-            >
-              {use === "signin" ? "Sign In" : "Sign Up"}
-            </Button>
+            {use === "signin" ? (
+              <Button
+                backgroundColor="#b503a6"
+                color="white"
+                variant="outline"
+                _hover={{ bg: "white", color: "#b503a6" }}
+                onClick={signinUser}
+              >
+                Sign In
+              </Button>
+            ) : (
+              <Button
+                backgroundColor="#b503a6"
+                color="white"
+                variant="outline"
+                _hover={{ bg: "white", color: "#b503a6" }}
+                onClick={signupUser}
+              >
+                Sign Up
+              </Button>
+            )}
           </ModalFooter>
         </ModalContent>
       </Modal>
