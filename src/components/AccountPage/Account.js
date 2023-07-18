@@ -19,10 +19,12 @@ export const Account = () => {
   const [haveAddress, setHaveAddress] = React.useState(true);
   const [country, setCountry] = React.useState("");
   const [data, setData] = React.useState({});
+  const [modalData, setModelData] = React.useState({});
 
-  const openModal = (use) => {
+  const openModal = (use, data) => {
     setUse(use);
     setShowModal(true);
+    setModelData(data);
   };
 
   const getUserInfo = async () => {
@@ -54,7 +56,7 @@ export const Account = () => {
             color="white"
             variant="outline"
             _hover={{ bg: "white", color: "#b503a6" }}
-            onClick={() => openModal("edit-personal-info")}
+            onClick={() => openModal("edit-personal-info", data)}
           >
             Edit
           </Button>
@@ -347,6 +349,7 @@ export const Account = () => {
         <PersonalInfoEditForm
           onClose={() => setShowModal(false)}
           isOpen={showModal}
+          data={modalData}
         />
       ) : (
         <></>

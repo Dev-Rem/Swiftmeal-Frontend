@@ -9,8 +9,23 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 import { Text, Input, Stack, Button } from "@chakra-ui/react";
+import { axiosInstance } from "../AxiosInstance";
 
 export const PersonalInfoEditForm = (props) => {
+  const [data, setData] = React.useState(props.data);
+
+  const handleChange = (event) => {
+    const val = event.target.value;
+    const key = event.target.name;
+    setData((prevState) => {
+      return { ...prevState, [key]: val };
+    });
+  };
+  const editPersonalInfo = async () => {
+    const res = await axiosInstance.put("/auth/user", data);
+    window.location.reload();
+  };
+
   return (
     <div>
       <Modal isOpen={props.isOpen} onClose={props.onClose}>
@@ -40,21 +55,51 @@ export const PersonalInfoEditForm = (props) => {
 
                 <div>
                   <Text fontWeight={"bold"} mb="5px">
-                    Full Name *
+                    First Name *
                   </Text>
-                  <Input placeholder="Full Name" backgroundColor={"white"} />
+                  <Input
+                    placeholder="Full Name"
+                    backgroundColor={"white"}
+                    value={data.firstName}
+                    name="firstName"
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <Text fontWeight={"bold"} mb="5px">
+                    Last Name *
+                  </Text>
+                  <Input
+                    placeholder="Full Name"
+                    backgroundColor={"white"}
+                    value={data.lastName}
+                    name="lastName"
+                    onChange={handleChange}
+                  />
                 </div>
                 <div>
                   <Text fontWeight={"bold"} mb="5px">
                     Email *
                   </Text>
-                  <Input placeholder="Email" backgroundColor={"white"} />
+                  <Input
+                    placeholder="Email"
+                    backgroundColor={"white"}
+                    value={data.email}
+                    name="email"
+                    onChange={handleChange}
+                  />
                 </div>
                 <div>
                   <Text fontWeight={"bold"} mb="5px">
                     Phone Number *
                   </Text>
-                  <Input placeholder="Phone Number" backgroundColor={"white"} />
+                  <Input
+                    placeholder="Phone Number"
+                    backgroundColor={"white"}
+                    value={data.phoneNumber}
+                    name="phoneNumber"
+                    onChange={handleChange}
+                  />
                 </div>
               </Stack>
             </div>
@@ -66,6 +111,7 @@ export const PersonalInfoEditForm = (props) => {
               color="white"
               variant="outline"
               _hover={{ bg: "white", color: "#b503a6" }}
+              onClick={() => editPersonalInfo()}
             >
               Edit
             </Button>
